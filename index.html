@@ -101,6 +101,25 @@ h2{font:800 clamp(1.9rem,4.5vw,2.9rem)/1.05 var(--head);letter-spacing:-.03em;ma
 .contact h2{margin-bottom:10px}.contact p{margin:0 0 24px;opacity:.8;max-width:50ch}
 .contact .btn{background:var(--acc);color:#0F1626}.contact .btn.alt{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 35%,transparent)}
 footer{padding:30px 0 50px;color:var(--muted);font-size:.93rem}
+/* workflow dialog */
+#wf{border:1px solid var(--line);border-radius:28px;background:var(--surface);color:var(--ink);padding:0;width:calc(100% - 28px);max-width:880px;max-height:88vh;overflow:auto;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+#wf::backdrop{background:rgba(10,15,30,.6);backdrop-filter:blur(4px)}
+.wf-in{padding:28px}.wf-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+#wf h2{font-size:clamp(1.5rem,4vw,2.1rem);margin:0 0 6px}#wf h3{font:700 1.1rem var(--head);margin:28px 0 12px}
+.wf-sub{color:var(--muted);margin:0;font-size:.97rem}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;counter-reset:s}
+.flow li{counter-increment:s;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:16px 16px 16px 58px;position:relative;font-size:.95rem;color:var(--muted)}
+.flow li::before{content:counter(s);position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--acc);color:#0F1626;font:800 1rem var(--head);display:grid;place-items:center}
+.flow b{display:block;color:var(--ink);font:700 1.02rem var(--head);margin-bottom:2px}
+.stat{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.stat span{padding:7px 14px;border-radius:99px;background:color-mix(in srgb,var(--acc) 16%,var(--bg));font-size:.9rem}.stat i{color:var(--muted);font-style:normal}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+.tw table{border-collapse:collapse;width:100%;min-width:600px;font-size:.92rem}
+.tw th,.tw td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}.tw th{background:var(--bg);font-weight:500;color:var(--muted)}.tw tr:last-child td{border-bottom:0}
+.tpl code{font-size:.9em;background:var(--surface);padding:2px 6px;border-radius:6px}
+.ul{}
+ul.tpl{padding-left:34px}ul.tpl li{margin:4px 0}
+.tpl{background:var(--bg);border-left:4px solid var(--acc);border-radius:6px 16px 16px 6px;padding:16px 18px;font-size:.95rem;color:var(--muted);margin:0}
+.note{font-size:.85rem;color:var(--muted);margin:10px 0 0}
 /* cursor + hover effects */
 .box,.job,.card,.contact{position:relative;transition:transform .18s ease-out,box-shadow .3s,border-color .3s;will-change:transform}
 .box::after,.job::after,.card::after,.contact::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
@@ -229,12 +248,12 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.93rem}
  <h2>Sample work</h2>
  <p class="sub" style="color:var(--muted);margin:-12px 0 24px;max-width:56ch">Practical examples based on my logistics, administrative and customer service experience.</p>
  <div class="proj">
-  <div class="box"><span class="k">Inventory</span><h3>Inventory tracking system</h3><p>A spreadsheet for item descriptions, quantities, stock status and updates.</p><span class="tools">Excel / Google Sheets</span></div>
-  <div class="box"><span class="k">Logistics</span><h3>Warehouse operations tracker</h3><p>Tracks receiving, deliveries, item checks and discrepancies.</p><span class="tools">Excel / Documentation</span></div>
-  <div class="box"><span class="k">Research</span><h3>Product & logistics research</h3><p>Organized product, provider, location and schedule comparisons.</p><span class="tools">Web research / Excel</span></div>
-  <div class="box"><span class="k">Administration</span><h3>Operations report</h3><p>Structured reporting for inventory, receiving, deliveries and daily activity.</p><span class="tools">Word / Google Docs</span></div>
-  <div class="box"><span class="k">Customer service</span><h3>Customer support workflow</h3><p>A simple flow for logging inquiries, giving updates and following up.</p><span class="tools">Communication / CRM concepts</span></div>
-  <div class="box"><span class="k">Web</span><h3>Personal portfolio website</h3><p>A responsive site with my experience, skills, services and contact details.</p><span class="tools">HTML / CSS / JavaScript</span></div>
+  <div class="box"><span class="k">Inventory</span><h3>Inventory tracking system</h3><p>A spreadsheet for item descriptions, quantities, stock status and updates.</p><span class="tools">Excel / Google Sheets</span><div style="margin-top:14px"><button class="btn alt" data-s="inv" type="button" style="padding:9px 16px;font-size:.92rem">View sample →</button></div></div>
+  <div class="box"><span class="k">Logistics</span><h3>Warehouse operations tracker</h3><p>Tracks receiving, deliveries, item checks and discrepancies.</p><span class="tools">Excel / Documentation</span><div style="margin-top:14px"><button class="btn alt" data-s="ops" type="button" style="padding:9px 16px;font-size:.92rem">View sample →</button></div></div>
+  <div class="box"><span class="k">Research</span><h3>Product & logistics research</h3><p>Organized product, provider, location and schedule comparisons.</p><span class="tools">Web research / Excel</span><div style="margin-top:14px"><button class="btn alt" data-s="res" type="button" style="padding:9px 16px;font-size:.92rem">View sample →</button></div></div>
+  <div class="box"><span class="k">Administration</span><h3>Operations report</h3><p>Structured reporting for inventory, receiving, deliveries and daily activity.</p><span class="tools">Word / Google Docs</span><div style="margin-top:14px"><button class="btn alt" data-s="rep" type="button" style="padding:9px 16px;font-size:.92rem">View sample →</button></div></div>
+  <div class="box"><span class="k">Customer service</span><h3>Customer support workflow</h3><p>A simple flow for logging inquiries, giving updates and following up.</p><span class="tools">Communication / CRM concepts</span><div style="margin-top:14px"><button class="btn alt" data-s="support" type="button" style="padding:9px 16px;font-size:.92rem">View sample →</button></div></div>
+  <div class="box"><span class="k">Web</span><h3>Personal portfolio website</h3><p>A responsive site with my experience, skills, services and contact details.</p><span class="tools">HTML / CSS / JavaScript</span><div style="margin-top:14px"><button class="btn alt" data-s="site" type="button" style="padding:9px 16px;font-size:.92rem">View sample →</button></div></div>
  </div>
 </div></section>
 
@@ -294,6 +313,44 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.93rem}
  document.documentElement.addEventListener('pointerleave',function(){reset();on=false;document.body.classList.remove('cursor-on')});
  (function loop(){rx+=(x-rx)*.3;ry+=(y-ry)*.3;ring.style.transform='translate('+rx+'px,'+ry+'px)';requestAnimationFrame(loop)})();
 })();
+</script>
+<template id="t-inv"><div class="wf-top"><div><h2>Inventory tracking system</h2><p class="wf-sub">A spreadsheet that shows what is in stock and what needs reordering.</p></div><button class="btn alt ib" data-x type="button" aria-label="Close">✕</button></div><h3>How it works</h3><ol class="flow"><li><b>Receive</b>Add new items or update quantities when stock arrives.</li><li><b>Record</b>Log items going out for each delivery or sale.</li><li><b>Check</b>The sheet flags any item at or below its reorder level.</li></ol><h3>Sample sheet</h3><div class="tw"><table><thead><tr><th>Code</th><th>Item</th><th>In</th><th>Out</th><th>On hand</th><th>Reorder at</th><th>Status</th></tr></thead><tbody><tr><td>A-101</td><td>Laptop charger 65W</td><td>40</td><td>22</td><td>18</td><td>10</td><td>OK</td></tr><tr><td>A-102</td><td>Wireless mouse</td><td>60</td><td>51</td><td>9</td><td>10</td><td>Reorder</td></tr><tr><td>A-103</td><td>USB flash drive 64GB</td><td>30</td><td>12</td><td>18</td><td>8</td><td>OK</td></tr><tr><td>A-104</td><td>HDMI cable 2m</td><td>25</td><td>20</td><td>5</td><td>8</td><td>Reorder</td></tr></tbody></table></div><p class="note">Sample data for illustration only.</p><h3>Sample formulas</h3><p class="tpl">On hand (E2): <code>=C2-D2</code><br>Status (G2): <code>=IF(E2&lt;=F2,"Reorder","OK")</code></p></template>
+<template id="t-ops"><div class="wf-top"><div><h2>Warehouse operations tracker</h2><p class="wf-sub">Keeps receiving, deliveries and item checks in one place.</p></div><button class="btn alt ib" data-x type="button" aria-label="Close">✕</button></div><h3>Daily flow</h3><div class="stat"><span>Receive</span><i>→</i><span>Check</span><i>→</i><span>Record</span><i>→</i><span>Store</span><i>→</i><span>Dispatch</span></div><h3>Sample receiving log</h3><div class="tw"><table><thead><tr><th>Date</th><th>Ref</th><th>Supplier</th><th>Expected</th><th>Received</th><th>Difference</th><th>Action</th></tr></thead><tbody><tr><td>Oct 6</td><td>RCV-014</td><td>Supplier A</td><td>50</td><td>50</td><td>0</td><td>Stored</td></tr><tr><td>Oct 7</td><td>RCV-015</td><td>Supplier B</td><td>30</td><td>28</td><td>−2</td><td>Reported to supplier</td></tr><tr><td>Oct 8</td><td>RCV-016</td><td>Supplier A</td><td>80</td><td>80</td><td>0</td><td>Stored</td></tr></tbody></table></div><p class="note">Sample data for illustration only.</p><h3>When items don't match</h3><ol class="flow"><li><b>Recount</b>Check the count again against the delivery paperwork.</li><li><b>Record</b>Note the difference in the log and take a photo if damaged.</li><li><b>Report</b>Tell the supplier and supervisor, and track it until resolved.</li></ol></template>
+<template id="t-res"><div class="wf-top"><div><h2>Product & logistics research</h2><p class="wf-sub">Comparing options so the best choice is clear and quick to make.</p></div><button class="btn alt ib" data-x type="button" aria-label="Close">✕</button></div><h3>Steps</h3><ol class="flow"><li><b>Define</b>Write down the item, budget, deadline and delivery location.</li><li><b>Collect</b>Gather options from several sources. Note price, speed and coverage.</li><li><b>Compare</b>Put them side by side and write a short recommendation.</li></ol><h3>Sample comparison</h3><div class="tw"><table><thead><tr><th>Option</th><th>Price</th><th>Delivery</th><th>Coverage</th><th>Notes</th></tr></thead><tbody><tr><td>Provider A</td><td>₱150</td><td>1–2 days</td><td>Metro area only</td><td>Fastest, limited area</td></tr><tr><td>Provider B</td><td>₱95</td><td>3–4 days</td><td>Province-wide</td><td>Cheapest</td></tr><tr><td>Provider C</td><td>₱120</td><td>2–3 days</td><td>Province-wide</td><td>Tracking included</td></tr></tbody></table></div><p class="note">Sample data for illustration only.</p><h3>Sample recommendation</h3><p class="tpl">Provider C suits most orders: balanced price and speed, with tracking. Use Provider A only for urgent metro deliveries.</p></template>
+<template id="t-rep"><div class="wf-top"><div><h2>Operations report</h2><p class="wf-sub">A one-page weekly summary that is easy to read and submit on time.</p></div><button class="btn alt ib" data-x type="button" aria-label="Close">✕</button></div><h3>Sample weekly figures</h3><div class="stat"><span>Items received: 158</span><span>Deliveries completed: 38</span><span>Discrepancies: 2</span><span>Open issues: 1</span></div><p class="note">Sample data for illustration only.</p><h3>Highlights</h3><ul class="tpl"><li>All scheduled deliveries went out on time.</li><li>Stock counts matched the records for 3 of 4 categories.</li></ul><h3>Issues</h3><ul class="tpl"><li>Two items short on one supplier delivery. Reported and being tracked.</li></ul><h3>Next actions</h3><ul class="tpl"><li>Recount the mismatched category on Monday.</li><li>Follow up with the supplier on the shortage.</li><li>Reorder items flagged low in the inventory sheet.</li></ul></template>
+<template id="t-support">
+ <div class="wf-top"><div><h2 id="wfT">Customer support workflow</h2><p class="wf-sub">A simple, repeatable flow for handling inquiries from first message to closed ticket.</p></div>
+ <button class="btn alt ib" data-x type="button" aria-label="Close">✕</button></div>
+ <h3>6 steps</h3>
+ <ol class="flow">
+  <li><b>Receive</b>The inquiry arrives by chat, email, call or social media. Acknowledge it within 15 minutes.</li>
+  <li><b>Log</b>Record it in the tracker: ticket ID, date, customer, channel, issue, priority and status.</li>
+  <li><b>Categorize</b>Sort it as billing, order, product help, delivery or complaint, and set its priority.</li>
+  <li><b>Resolve</b>Check the order or product details and apply the standard fix. Escalate to a supervisor if needed.</li>
+  <li><b>Update</b>Tell the customer what was done and what happens next. Update the ticket status.</li>
+  <li><b>Follow up and close</b>Confirm the customer is satisfied, close the ticket and note any repeat issues.</li>
+ </ol>
+ <h3>Ticket statuses</h3>
+ <div class="stat"><span>New</span><i>→</i><span>In progress</span><i>→</i><span>Waiting on customer</span><i>→</i><span>Resolved</span><i>→</i><span>Closed</span></div>
+ <h3>Sample tracker</h3>
+ <div class="tw"><table><thead><tr><th>ID</th><th>Date</th><th>Customer</th><th>Channel</th><th>Issue</th><th>Priority</th><th>Status</th></tr></thead><tbody>
+  <tr><td>CS-001</td><td>Oct 9</td><td>Customer A</td><td>Chat</td><td>Order not received</td><td>High</td><td>In progress</td></tr>
+  <tr><td>CS-002</td><td>Oct 9</td><td>Customer B</td><td>Email</td><td>Product setup help</td><td>Medium</td><td>Waiting on customer</td></tr>
+  <tr><td>CS-003</td><td>Oct 8</td><td>Customer C</td><td>Call</td><td>Wrong item delivered</td><td>High</td><td>Resolved</td></tr>
+ </tbody></table></div>
+ <p class="note">Sample data with made-up customers, for illustration only.</p>
+ <h3>Sample first reply</h3>
+ <p class="tpl">Hi [Name], thank you for contacting us. I've logged your concern as ticket [ID] and I'm checking [issue] now. I'll update you by [time]. If you have a photo or order number, please send it. Thank you for your patience.</p>
+ <h3>Sample targets</h3>
+ <div class="stat"><span>First reply: 15 minutes</span><span>Updates: every 24 hours</span><span>Close: after customer confirms</span></div>
+</template>
+<template id="t-site"><div class="wf-top"><div><h2>Personal portfolio website</h2><p class="wf-sub">The site you are looking at now.</p></div><button class="btn alt ib" data-x type="button" aria-label="Close">✕</button></div><h3>Goal</h3><p class="tpl">Show my experience, skills and services clearly to employers and clients, on any device.</p><h3>How I built it</h3><ol class="flow"><li><b>Plan</b>Choose sections from my resume: about, experience, services, skills, projects and contact.</li><li><b>Design</b>Create a responsive layout with a dropdown menu and light and dark modes.</li><li><b>Build</b>Write it in HTML, CSS and JavaScript with no frameworks.</li><li><b>Publish</b>Host it free on GitHub Pages.</li></ol><h3>Features</h3><div class="stat"><span>Mobile friendly</span><span>Light and dark mode</span><span>Keyboard accessible</span><span>Fast to load</span></div></template>
+<dialog id="wf" aria-label="Sample work"></dialog>
+<script>
+(function(){var d=document.getElementById('wf');if(!d||!d.showModal)return;
+ [].forEach.call(document.querySelectorAll('[data-s]'),function(b){b.addEventListener('click',function(){
+  var t=document.getElementById('t-'+b.dataset.s);d.innerHTML='<div class="wf-in">'+t.innerHTML+'</div>';d.showModal();d.scrollTop=0})});
+ d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-x]'))d.close()});})();
 </script>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
