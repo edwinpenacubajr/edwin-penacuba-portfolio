@@ -107,6 +107,9 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.93rem}
  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--acc) 30%,transparent),transparent 70%)}
 .is-hot{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-5px);box-shadow:0 22px 40px -22px rgba(15,22,38,.55);border-color:var(--acc)}
 .is-hot::after{opacity:1}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:14px;font-size:.95rem;opacity:0;pointer-events:none;transition:.3s;z-index:300;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.contact .btn{position:relative;z-index:2;cursor:pointer}
 .cur-dot,.cur-ring{position:fixed;left:0;top:0;z-index:200;pointer-events:none;border-radius:50%;opacity:0;transition:opacity .25s}
 .cur-dot{width:8px;height:8px;margin:-4px 0 0 -4px;background:var(--acc)}
 .cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:2px solid var(--acc);transition:opacity .25s,width .25s,height .25s,margin .25s,background .25s}
@@ -238,7 +241,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.93rem}
 <section id="contact"><div class="wrap"><div class="contact">
  <h2>Let's work together</h2>
  <p>I'm open to virtual assistance, administrative support, data entry, logistics, warehouse operations, customer service and technology support roles. Send me a message.</p>
- <div class="cta"><a class="btn" href="mailto:edwinpenacubajr@gmail.com">edwinpenacubajr@gmail.com</a><a class="btn alt" href="tel:+639168552232">+63 916 855 2232</a></div>
+ <div class="cta"><a class="btn" id="mailBtn" href="mailto:edwinpenacubajr@gmail.com" data-copy="edwinpenacubajr@gmail.com">edwinpenacubajr@gmail.com</a><a class="btn alt" id="telBtn" href="tel:+639168552232" data-copy="+63 916 855 2232">+63 916 855 2232</a></div>
 </div></div></section>
 </main>
 <footer><div class="wrap">© 2026 Edwin Peñacuba Jr. · Bacolod City, Philippines</div></footer>
@@ -290,6 +293,27 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.93rem}
  document.addEventListener('pointerup',function(){ring.classList.remove('press')});
  document.documentElement.addEventListener('pointerleave',function(){reset();on=false;document.body.classList.remove('cursor-on')});
  (function loop(){rx+=(x-rx)*.3;ry+=(y-ry)*.3;ring.style.transform='translate('+rx+'px,'+ry+'px)';requestAnimationFrame(loop)})();
+})();
+</script>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+ var toast=document.getElementById('toast'),tm;
+ function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('show')},2600)}
+ function copy(t){
+  try{if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(t)}catch(e){}
+  return new Promise(function(ok,no){try{var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();var d=document.execCommand('copy');document.body.removeChild(a);d?ok():no()}catch(e){no()}});
+ }
+ var touch=matchMedia('(hover:none),(pointer:coarse)').matches;
+ [].forEach.call(document.querySelectorAll('[data-copy]'),function(b){
+  b.addEventListener('click',function(e){
+   if(touch)return; /* phones: let mailto/tel open the mail or phone app */
+   e.preventDefault();
+   var t=b.dataset.copy,isMail=b.id==='mailBtn';
+   if(isMail)window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(t),'_blank','noopener');
+   copy(t).then(function(){say((isMail?'Email':'Number')+' copied: '+t)},function(){say(t)});
+  });
+ });
 })();
 </script>
 </body>
