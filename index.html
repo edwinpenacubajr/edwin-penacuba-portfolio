@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Edwin Peñacuba Jr. — Warehouse & Logistics, E-commerce, Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F1F3F7;--surface:#fff;--ink:#1F2C45;--muted:#59627A;--line:#DADFEA;--acc:#12A38F;--warm:#F2A541;--glass:rgba(255,255,255,.78);
+--head:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"DM Sans",system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1626;--surface:#18223A;--ink:#EAF0FF;--muted:#9FA9C4;--line:#2B3857;--acc:#3ED6C0;--glass:rgba(24,34,58,.78)}}
+:root[data-theme="dark"]{--bg:#0F1626;--surface:#18223A;--ink:#EAF0FF;--muted:#9FA9C4;--line:#2B3857;--acc:#3ED6C0;--glass:rgba(24,34,58,.78)}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;scroll-padding-top:90px;scroll-behavior:smooth}
+body{min-height:100%;margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px;position:relative}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding:12px 0}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:22px;padding:8px 10px 8px 18px}
+.logo{font:800 1.15rem var(--head);letter-spacing:-.02em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;align-items:center}
+.nb,nav>ul>li>a{display:flex;align-items:center;gap:6px;border:0;background:none;color:inherit;font:500 .97rem var(--body);padding:10px 14px;border-radius:14px;cursor:pointer;width:100%}
+.nb:hover,nav>ul>li>a:hover,.nb[aria-expanded="true"]{background:color-mix(in srgb,var(--acc) 15%,transparent)}
+.nb svg{width:14px;height:14px;transition:transform .25s}.nb[aria-expanded="true"] svg{transform:rotate(180deg)}
+li.hm{position:relative}
+.menu{position:absolute;top:calc(100% + 10px);left:0;width:320px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:8px;box-shadow:0 24px 50px -22px rgba(15,22,38,.45);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.22s}
+.menu.open{opacity:1;visibility:visible;transform:none}
+.menu a{display:block;padding:10px 12px;border-radius:12px}
+.menu a:hover,.menu a:focus-visible{background:color-mix(in srgb,var(--acc) 14%,transparent)}
+.menu b{display:block;font:600 .98rem var(--head)}.menu small{color:var(--muted);font-size:.85rem}
+.right{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;font:500 1rem var(--body);padding:12px 20px;border-radius:16px;background:var(--ink);color:var(--bg);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.ib{width:42px;height:42px;padding:0;border-radius:14px}.burger{display:none}
+@media (max-width:820px){
+ .burger{display:inline-flex}.hide-m{display:none}
+ nav{position:absolute;left:20px;right:20px;top:calc(100% + 8px);background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:10px;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transition:.3s}
+ nav.open{max-height:80vh;opacity:1;visibility:visible;overflow:auto}
+ nav ul{flex-direction:column;align-items:stretch}.nb,nav>ul>li>a{justify-content:space-between}
+ .menu{position:static;width:auto;border:0;box-shadow:none;padding:0 0 0 8px;opacity:1;visibility:visible;transform:none;max-height:0;overflow:hidden;transition:max-height .3s}
+ .menu.open{max-height:320px}}
+
+/* hero */
+.hero{position:relative;padding:60px 0 80px;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;animation:dr 14s ease-in-out infinite alternate}
+.b1{width:380px;height:380px;background:var(--acc);top:-90px;right:-40px}.b2{width:280px;height:280px;background:var(--warm);bottom:-90px;left:8%;animation-delay:-6s}
+@keyframes dr{to{transform:translate(-40px,40px) scale(1.15)}}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hi{font-weight:500;color:var(--muted);margin:0 0 8px}
+h1{font:800 clamp(2.6rem,8vw,5.4rem)/.96 var(--head);letter-spacing:-.04em;margin:0 0 18px}
+.tag{font-size:1.15rem;color:var(--muted);max-width:44ch;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.card{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:36px 36px 36px 8px;padding:26px}
+.mono{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:800 1.9rem var(--head);margin-bottom:14px;box-shadow:0 0 0 6px color-mix(in srgb,var(--acc) 35%,transparent)}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.98rem}
+.facts li{display:flex;gap:10px;align-items:flex-start;overflow-wrap:anywhere}
+.facts span{width:26px;flex:none}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero{padding:30px 0 50px}}
+
+section{padding:64px 0}
+h2{font:800 clamp(1.9rem,4.5vw,2.9rem)/1.05 var(--head);letter-spacing:-.03em;margin:0 0 28px}
+.about{font-size:1.25rem;max-width:62ch;margin:0}
+.tl{position:relative;display:grid;gap:18px;padding-left:26px;border-left:2px solid var(--line)}
+.job{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:12px 28px 12px 12px;padding:22px 24px}
+.job::before{content:"";position:absolute;left:-36px;top:28px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:4px solid var(--acc)}
+.job.now{border-color:var(--acc)}
+.job h3{font:700 1.3rem var(--head);margin:0;letter-spacing:-.02em}
+.when{color:var(--acc);font-weight:500;margin:2px 0 6px}
+.job p{margin:0;color:var(--muted);font-size:.97rem}
+.job ul,.tr ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:.95rem}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.svc .box{padding:22px;border-radius:12px 28px 12px 12px}.svc .box:nth-child(even){border-radius:28px 12px 12px 12px}
+.svc h3{font-size:1.1rem;margin:8px 0 6px}.svc p{margin:0;color:var(--muted);font-size:.95rem}.svc .ic{font-size:1.6rem}
+.proj{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.proj .box{padding:22px}.proj .box:nth-child(3n+1){border-radius:28px 12px 12px 12px}.proj .box:nth-child(3n+2){border-radius:12px}.proj .box:nth-child(3n){border-radius:12px 28px 12px 12px}
+.proj h3{font-size:1.1rem;margin:10px 0 6px}.proj p{margin:0 0 12px;color:var(--muted);font-size:.95rem}
+.proj .k{font:500 .8rem var(--body);padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--warm) 30%,var(--bg))}
+.proj .tools{color:var(--acc);font-weight:500;font-size:.9rem}
+@media (max-width:820px){.svc,.proj{grid-template-columns:1fr}}
+.avail{margin:0 0 18px}.avail .badge{margin:0;padding:6px 14px;font-size:.88rem}
+.badge{display:inline-block;margin-left:8px;font:500 .8rem var(--body);padding:3px 10px;border-radius:99px;background:var(--acc);color:#fff;vertical-align:middle}
+.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+.box{background:var(--surface);border:1px solid var(--line);padding:26px}
+.box h3{font:700 1.25rem var(--head);margin:0 0 14px}
+.bx1{border-radius:36px 12px 12px 12px}.bx2{border-radius:12px 36px 12px 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:8px 14px;border-radius:99px;border:1px solid var(--line);font-size:.95rem;background:var(--bg)}
+.chips.t span{background:color-mix(in srgb,var(--acc) 14%,var(--bg));border-color:transparent}
+.sec{margin-top:16px}
+.lang{display:grid;gap:14px}
+.lang div{display:flex;justify-content:space-between;margin-bottom:5px}
+.meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--warm));border-radius:99px}
+.tr{margin:0 0 18px}.tr b{font-family:var(--head)}.tr small{display:block;color:var(--muted)}
+.tr ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:.95rem}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+.contact{background:var(--ink);color:var(--bg);border-radius:40px 12px 40px 12px;padding:44px 32px;text-align:left}
+.contact h2{margin-bottom:10px}.contact p{margin:0 0 24px;opacity:.8;max-width:50ch}
+.contact .btn{background:var(--acc);color:#0F1626}.contact .btn.alt{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 35%,transparent)}
+footer{padding:30px 0 50px;color:var(--muted);font-size:.93rem}
+/* cursor + hover effects */
+.box,.job,.card,.contact{position:relative;transition:transform .18s ease-out,box-shadow .3s,border-color .3s;will-change:transform}
+.box::after,.job::after,.card::after,.contact::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+ background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--acc) 30%,transparent),transparent 70%)}
+.is-hot{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-5px);box-shadow:0 22px 40px -22px rgba(15,22,38,.55);border-color:var(--acc)}
+.is-hot::after{opacity:1}
+.cur-dot,.cur-ring{position:fixed;left:0;top:0;z-index:200;pointer-events:none;border-radius:50%;opacity:0;transition:opacity .25s}
+.cur-dot{width:8px;height:8px;margin:-4px 0 0 -4px;background:var(--acc)}
+.cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:2px solid var(--acc);transition:opacity .25s,width .25s,height .25s,margin .25s,background .25s}
+.cursor-on .cur-dot,.cursor-on .cur-ring{opacity:1}
+.cur-ring.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:color-mix(in srgb,var(--acc) 16%,transparent)}
+.cur-ring.press{width:26px;height:26px;margin:-13px 0 0 -13px}
+@media (prefers-reduced-motion:reduce){.is-hot{transform:none}.cur-dot,.cur-ring{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="bar">
+ <a class="logo" href="#top">Edwin Peñacuba Jr.</a>
+ <nav id="nav" aria-label="Main"><ul>
+  <li><a href="#about">About</a></li>
+  <li class="hm"><button class="nb" aria-expanded="false" aria-controls="m1">Experience
+   <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 5 5 5-5"/></svg></button>
+   <div class="menu" id="m1">
+    <a href="#experience"><b>Warehouse & Logistics Supervisor</b><small>2026 – Present</small></a>
+    <a href="#experience"><b>Senior Technology Sales Associate</b><small>2019 – 2026</small></a>
+    <a href="#experience"><b>Customer Service Representative</b><small>2017</small></a></div></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#education">Education</a></li>
+  <li><a href="#contact">Contact</a></li>
+ </ul></nav>
+ <div class="right">
+  <button class="btn alt ib" id="theme" aria-label="Switch colour theme">◐</button>
+  <a class="btn hide-m" href="#contact">Get in touch</a>
+  <button class="btn alt ib burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
+ </div></div></div></header>
+
+<main id="top">
+<div class="hero"><div class="blob b1"></div><div class="blob b2"></div>
+ <div class="wrap">
+  <div>
+   <p class="avail"><span class="badge">Available for opportunities</span></p>
+   <h1>Edwin Peñacuba Jr.</h1>
+   <p class="tag">Tech-savvy, detail-oriented and adaptable. I run warehouse and logistics operations, manage e-commerce orders, and keep data accurate.</p>
+   <div class="cta"><a class="btn" href="#experience">See my experience</a><a class="btn alt" href="#contact">Contact me</a><a class="btn alt" href="https://edwinpenacubajr.github.io/Edwin-Penacuba-Resume.pdf">Download resume</a></div>
+  </div>
+  <div class="card">
+   <div class="mono" aria-hidden="true">EP</div>
+   <ul class="facts">
+    <li><span>📍</span>Bacolod City, Negros Occidental</li>
+    <li><span>🏢</span>Warehouse & Logistics Supervisor</li>
+    <li><span>🗣️</span>Tagalog, English, Hiligaynon</li>
+   </ul>
+  </div>
+ </div></div>
+
+<section id="about"><div class="wrap">
+ <h2>About me</h2>
+ <p class="about">I'm a hardworking and adaptable person with experience in warehouse and logistics operations, data entry and e-commerce. I'm organized, pay close attention to detail and have strong computer and digital skills. I learn quickly, and I work well on my own or with a team.</p>
+ <p class="about" style="margin-top:16px;color:var(--muted)">As a Warehouse & Logistics Supervisor I manage inventory, documentation, receiving and delivery coordination and reports. My years in technology sales built my communication, product knowledge and problem-solving.</p>
+</div></section>
+
+<section id="experience"><div class="wrap">
+ <h2>Experience</h2>
+ <div class="tl">
+  <div class="job now"><h3>Warehouse & Logistics Supervisor<span class="badge">Current</span></h3>
+   <div class="when">July 2026 – Present</div>
+   <p>Beyond I.TECH Ventures Corporation · Bacolod Warehouse, BESCA Properties, Bacolod City</p><ul><li>Supervise warehouse and logistics operations.</li><li>Manage inventory records, documentation and item checking.</li><li>Support receiving and delivery coordination.</li><li>Monitor discrepancies and keep warehouse records accurate and organized.</li></ul></div>
+  <div class="job"><h3>Senior Technology Sales Associate</h3>
+   <div class="when">July 2019 – July 2026</div>
+   <p>Beyond I.TECH Ventures Corporation · Ayala Malls Capitol Central, Bacolod City</p><ul><li>Helped customers choose technology products and gave product information and support.</li><li>Supported sales operations and daily store activities.</li></ul></div>
+  <div class="job"><h3>Customer Service Representative</h3>
+   <div class="when">March 2017 – May 2017</div>
+   <p>MCCS Business Process Outsourcing and Marketing Inc. · Mandaluyong City, Metro Manila</p><ul><li>Handled customer inquiries and concerns through professional communication.</li></ul></div>
+ </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+ <h2>What I can do</h2>
+ <div class="svc">
+  <div class="box"><span class="ic" aria-hidden="true">📊</span><h3>Data entry & Excel</h3><p>Accurate data entry, spreadsheets, inventory lists and organized records.</p></div>
+  <div class="box"><span class="ic" aria-hidden="true">📦</span><h3>Warehouse & inventory</h3><p>Stock monitoring, item checking, receiving support, labeling and documentation.</p></div>
+  <div class="box"><span class="ic" aria-hidden="true">📁</span><h3>Administrative support</h3><p>Document preparation, record keeping, reports and tracking sheets.</p></div>
+  <div class="box"><span class="ic" aria-hidden="true">💻</span><h3>Technology support</h3><p>Product knowledge, customer assistance and troubleshooting support.</p></div>
+  <div class="box"><span class="ic" aria-hidden="true">💬</span><h3>Customer service</h3><p>Clear communication, inquiries, follow-ups and issue handling.</p></div>
+  <div class="box"><span class="ic" aria-hidden="true">🔎</span><h3>Research & online tasks</h3><p>Web and product research, comparisons and short summaries.</p></div>
+  <div class="box"><span class="ic" aria-hidden="true">🛒</span><h3>E-commerce support</h3><p>Product information, order coordination and data organization.</p></div>
+  <div class="box"><span class="ic" aria-hidden="true">✉️</span><h3>Email & communication</h3><p>Professional messages, status updates and follow-ups with customers and suppliers.</p></div>
+  <div class="box"><span class="ic" aria-hidden="true">🗂️</span><h3>Records & documentation</h3><p>Records that are structured, current and easy to find.</p></div>
+ </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Skills</h2>
+ <div class="grid2">
+  <div class="box bx1"><h3>Technical</h3>
+   <div class="chips t"><span>Warehouse & Inventory Management</span><span>Data Entry & Microsoft Excel</span><span>Warehouse Management Systems (WMS)</span><span>Logistics & Delivery Coordination</span><span>E-commerce Order & Product Management</span><span>Social Media Management</span><span>Canva & Graphic Design</span><span>Basic Web Design & Website Editing</span></div></div>
+  <div class="box bx2"><h3>Core strengths</h3>
+   <div class="chips"><span>Management & Leadership</span><span>Creativity</span><span>Adaptability</span><span>Problem Solving</span><span>Dependability</span><span>Strong Work Ethic</span><span>Communication & Teamwork</span><span>Time Management</span></div></div>
+ </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+ <h2>Education & training</h2>
+ <div class="grid2">
+  <div>
+   <div class="box bx1"><h3>Associate in Computer Technology</h3>
+    <p style="margin:0;color:var(--muted)">Bacolod City College, Negros Occidental<br>S.Y. 2018–2019</p></div>
+   <div class="box bx2 sec"><h3>Internships & trainings</h3>
+    <div class="tr"><b>Sectoral Concerns & Price Monitoring Unit (CMO-PMU)</b><small>Office of the City Mayor, Bacolod City · 250 hours · 2019</small>
+     <ul><li>Encoded, updated and maintained price monitoring and sectoral data in spreadsheets and databases.</li><li>Checked entries for accuracy and completeness, and corrected errors.</li><li>Helped prepare reports and summaries, and kept files organized for on-time submission.</li></ul></div>
+    <div class="tr" style="margin:0"><b>English Proficiency and Advance Call Center Training Program</b><small>Industrial Advancement Academy of the Philippines (IAAP) · 112 hours · February 2017, Intramuros, Manila</small></div></div>
+  </div>
+  <div class="box bx2"><h3>Languages</h3>
+   <div class="lang"><div><span>Tagalog</span></div><div><span>English</span></div><div><span>Hiligaynon</span></div></div>
+   <p style="color:var(--muted);font-size:.95rem;margin:14px 0 0">Comfortable working with customers and teams in all three.</p></div>
+ </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <h2>Sample work</h2>
+ <p class="sub" style="color:var(--muted);margin:-12px 0 24px;max-width:56ch">Practical examples based on my logistics, administrative and customer service experience.</p>
+ <div class="proj">
+  <div class="box"><span class="k">Inventory</span><h3>Inventory tracking system</h3><p>A spreadsheet for item descriptions, quantities, stock status and updates.</p><span class="tools">Excel / Google Sheets</span></div>
+  <div class="box"><span class="k">Logistics</span><h3>Warehouse operations tracker</h3><p>Tracks receiving, deliveries, item checks and discrepancies.</p><span class="tools">Excel / Documentation</span></div>
+  <div class="box"><span class="k">Research</span><h3>Product & logistics research</h3><p>Organized product, provider, location and schedule comparisons.</p><span class="tools">Web research / Excel</span></div>
+  <div class="box"><span class="k">Administration</span><h3>Operations report</h3><p>Structured reporting for inventory, receiving, deliveries and daily activity.</p><span class="tools">Word / Google Docs</span></div>
+  <div class="box"><span class="k">Customer service</span><h3>Customer support workflow</h3><p>A simple flow for logging inquiries, giving updates and following up.</p><span class="tools">Communication / CRM concepts</span></div>
+  <div class="box"><span class="k">Web</span><h3>Personal portfolio website</h3><p>A responsive site with my experience, skills, services and contact details.</p><span class="tools">HTML / CSS / JavaScript</span></div>
+ </div>
+</div></section>
+
+<section id="contact"><div class="wrap"><div class="contact">
+ <h2>Let's work together</h2>
+ <p>I'm open to virtual assistance, administrative support, data entry, logistics, warehouse operations, customer service and technology support roles. Send me a message.</p>
+ <div class="cta"><a class="btn" href="mailto:edwinpenacubajr@gmail.com">edwinpenacubajr@gmail.com</a><a class="btn alt" href="tel:+639168552232">+63 916 855 2232</a></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">© 2026 Edwin Peñacuba Jr. · Bacolod City, Philippines</div></footer>
+
+<script>
+(function(){
+ var nav=document.getElementById('nav'),bg=document.getElementById('burger'),mq=matchMedia('(max-width:820px)'),
+ bs=[].slice.call(document.querySelectorAll('.nb'));
+ function cl(b){b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).classList.remove('open')}
+ function op(b){b.setAttribute('aria-expanded','true');document.getElementById(b.getAttribute('aria-controls')).classList.add('open')}
+ function closeNav(){nav.classList.remove('open');bg.textContent='☰';bg.setAttribute('aria-expanded','false')}
+ bs.forEach(function(b){var li=b.parentNode;
+  b.addEventListener('click',function(){b.getAttribute('aria-expanded')==='true'?cl(b):op(b)});
+  li.addEventListener('mouseenter',function(){if(!mq.matches)op(b)});
+  li.addEventListener('mouseleave',function(){if(!mq.matches)cl(b)});
+  li.addEventListener('focusout',function(e){if(!li.contains(e.relatedTarget))cl(b)})});
+ bg.addEventListener('click',function(){var o=nav.classList.toggle('open');bg.textContent=o?'✕':'☰';bg.setAttribute('aria-expanded',o)});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'){bs.forEach(cl);closeNav()}});
+ document.addEventListener('click',function(e){
+  if(!e.target.closest('.hm'))bs.forEach(cl);
+  if(mq.matches&&e.target.closest('nav a'))closeNav()});
+ mq.addEventListener('change',function(){bs.forEach(cl);closeNav()});
+ document.getElementById('theme').addEventListener('click',function(){var r=document.documentElement,
+  d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'});
+})();
+</script>
+<div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"></div>
+<script>
+(function(){
+ if(!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ var dot=document.querySelector('.cur-dot'),ring=document.querySelector('.cur-ring'),
+ x=0,y=0,rx=0,ry=0,hot=null,on=false;
+ function reset(){if(hot){hot.classList.remove('is-hot');hot.style.removeProperty('--rx');hot.style.removeProperty('--ry');hot=null}}
+ document.addEventListener('pointermove',function(e){
+  if(e.pointerType!=='mouse')return;
+  x=e.clientX;y=e.clientY;
+  if(!on){on=true;rx=x;ry=y;document.body.classList.add('cursor-on')}
+  dot.style.transform='translate('+x+'px,'+y+'px)';
+  var t=e.target.closest?e.target.closest('.box,.job,.card,.contact'):null;
+  if(t!==hot){reset();if(t){hot=t;t.classList.add('is-hot')}}
+  if(hot){
+   var r=hot.getBoundingClientRect(),px=(x-r.left)/r.width,py=(y-r.top)/r.height,k=hot.classList.contains('contact')?3:8;
+   hot.style.setProperty('--mx',(x-r.left)+'px');hot.style.setProperty('--my',(y-r.top)+'px');
+   hot.style.setProperty('--rx',(-(py-.5)*k).toFixed(2)+'deg');hot.style.setProperty('--ry',((px-.5)*k).toFixed(2)+'deg');
+  }
+  ring.classList.toggle('big',!!(hot||(e.target.closest&&e.target.closest('a,button'))));
+ });
+ document.addEventListener('pointerdown',function(){ring.classList.add('press')});
+ document.addEventListener('pointerup',function(){ring.classList.remove('press')});
+ document.documentElement.addEventListener('pointerleave',function(){reset();on=false;document.body.classList.remove('cursor-on')});
+ (function loop(){rx+=(x-rx)*.3;ry+=(y-ry)*.3;ring.style.transform='translate('+rx+'px,'+ry+'px)';requestAnimationFrame(loop)})();
+})();
+</script>
+</body>
+</html>
