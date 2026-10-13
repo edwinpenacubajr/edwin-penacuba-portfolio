@@ -3,158 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Edwin Peñacuba Jr. — Warehouse, Logistics & Data</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>Edwin_Penacuba_Portfolio.xlsx</title>
 <style>
-:root{--bg:#f1e6d0;--ink:#1b1a17;--card:#fffaf0;--acc:#ff5a1f;--blue:#2b59ff;--ok:#1f9d55;
+:root{--bg:#ffffff;--ink:#1f2328;--line:#d4d7dc;--hd:#eef0f3;--lb:#f6f7f9;--g:#217346;--gl:#dff3e6;--sel:#1a7f4b;--bl:#0b5cd5;--warn:#fff3c4;--bad:#ffd9d4;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--ink:#f1e6d0;--card:#24211a}}
-:root[data-theme="dark"]{--bg:#17150f;--ink:#f1e6d0;--card:#24211a}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1d20;--ink:#e8eaed;--line:#3a3d42;--hd:#2a2d32;--lb:#222529;--gl:#1e3a2a;--bl:#7aa8ff;--warn:#4a4020;--bad:#4d2a26}}
+:root[data-theme="dark"]{--bg:#1b1d20;--ink:#e8eaed;--line:#3a3d42;--hd:#2a2d32;--lb:#222529;--gl:#1e3a2a;--bl:#7aa8ff;--warn:#4a4020;--bad:#4d2a26}
+html,body{height:100%;margin:0}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.5;
-background-image:radial-gradient(var(--ink) 1px,transparent 1px);background-size:26px 26px;background-position:0 0}
-body::before{content:"";position:fixed;inset:0;background:var(--bg);opacity:.93;z-index:-1}
-.mono{font-family:"Space Mono",ui-monospace,monospace}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:10px;flex-wrap:wrap}
-nav b{font-size:1.1rem}
-nav a{color:var(--ink);text-decoration:none;font-family:"Space Mono",monospace;font-size:.8rem;margin-left:14px}
-button,.btn{font:inherit;cursor:pointer;color:var(--ink);background:var(--card);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:10px 18px;font-weight:700;text-decoration:none;display:inline-block;transition:.12s}
-.btn.pri{background:var(--acc);color:#1b1a17}
-button:hover,.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:40px 0 30px}
-h1{font-size:clamp(2.6rem,8vw,5.2rem);line-height:.95;margin:.2em 0;letter-spacing:-.03em}
-h1 span{background:var(--acc);color:#1b1a17;padding:0 .12em;box-decoration-break:clone}
-.tag{display:inline-block;border:2px solid var(--ink);padding:3px 10px;font-size:.78rem;background:var(--card)}
-.tag i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok);margin-right:6px;animation:p 1.4s infinite}
-@keyframes p{50%{opacity:.25}}
-.label{background:#fff;color:#111;border:3px solid #111;box-shadow:8px 8px 0 #111;padding:16px;transform:rotate(2.2deg);position:relative;font-family:"Space Mono",monospace;font-size:.82rem}
-.label .r{display:flex;justify-content:space-between;border-bottom:2px solid #111;padding:6px 0;gap:8px}
-.label h3{margin:6px 0 2px;font-family:"Space Grotesk";font-size:1.5rem}
-.bar{height:54px;margin-top:12px;background:repeating-linear-gradient(90deg,#111 0 2px,#fff 2px 5px,#111 5px 6px,#fff 6px 10px,#111 10px 13px,#fff 13px 15px)}
-.stamp{position:absolute;right:-10px;top:-18px;border:3px solid #d62828;color:#d62828;padding:2px 10px;font-weight:700;transform:rotate(-12deg);background:#fff;font-size:.8rem}
-.belt{margin:26px 0;border-block:3px solid var(--ink);overflow:hidden;background:var(--card);position:relative}
-.belt::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:repeating-linear-gradient(90deg,var(--ink) 0 14px,transparent 14px 28px);opacity:.35}
-.track{display:flex;gap:14px;width:max-content;padding:16px 0 20px;animation:belt 28s linear infinite}
-.belt:hover .track{animation-play-state:paused}
-@keyframes belt{to{transform:translateX(-50%)}}
-.box{background:#c99a5b;color:#1b1a17;border:2px solid #1b1a17;padding:8px 16px;font-weight:700;white-space:nowrap;position:relative}
-.box::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:10px;margin-left:-5px;background:rgba(255,255,255,.35)}
-.box span{position:relative}
-section{padding:46px 0}
-h2{font-size:clamp(1.8rem,5vw,2.8rem);margin:0 0 6px;letter-spacing:-.02em}
-h2 small{display:block;font-family:"Space Mono",monospace;font-size:.75rem;color:var(--acc);letter-spacing:.1em;text-transform:uppercase}
-.card{background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:20px}
-.track-list{list-style:none;margin:26px 0 0;padding:0 0 0 30px;border-left:4px dashed var(--ink)}
-.track-list li{position:relative;margin-bottom:26px}
-.track-list li::before{content:"";position:absolute;left:-43px;top:18px;width:20px;height:20px;background:var(--ok);border:3px solid var(--ink);border-radius:50%}
-.track-list li.now::before{background:var(--acc);animation:p 1.2s infinite}
-.st{font-family:"Space Mono",monospace;font-size:.75rem;font-weight:700;color:var(--blue)}
-.track-list h3{margin:2px 0 0}
-.track-list ul{margin:8px 0 0;padding-left:18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:24px}
-.crate{background:#c99a5b;color:#1b1a17;border:2px solid #1b1a17;box-shadow:5px 5px 0 var(--ink);padding:34px 16px 16px;position:relative}
-.crate::before{content:"";position:absolute;left:0;right:0;top:12px;height:10px;background:rgba(255,255,255,.4)}
-.crate h3{margin:0 0 4px;font-size:1.05rem}.crate p{margin:0;font-size:.88rem}
-.crate:nth-child(3n+2){background:#d9b07a}.crate:hover{transform:rotate(-1.2deg)}
-.scroll{overflow-x:auto;margin-top:16px}
-table{border-collapse:collapse;width:100%;font-family:"Space Mono",monospace;font-size:.82rem;min-width:560px}
-th,td{border:2px solid var(--ink);padding:8px;text-align:left}
-th{background:var(--ink);color:var(--bg)}
-.pill{padding:2px 8px;font-weight:700;border:2px solid var(--ink)}
-.OK{background:#9fe3b6;color:#111}.RE{background:#ff8a6b;color:#111}
-td button{padding:2px 9px;box-shadow:2px 2px 0 var(--ink)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-footer{text-align:center;padding:30px 0 50px;font-family:"Space Mono",monospace;font-size:.78rem}
-.ship{font-size:1.05rem}.ship a{color:var(--ink);font-weight:700}
-@media (max-width:760px){.hero,.two{grid-template-columns:1fr}.label{transform:rotate(1deg)}}
-@media (prefers-reduced-motion:reduce){.track,.tag i{animation:none}}
+body{background:var(--bg);color:var(--ink);font:15px/1.4 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.app{display:flex;flex-direction:column;height:100%}
+.title{background:var(--g);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:8px 14px;font-weight:600;gap:10px}
+.title small{opacity:.85;font-weight:400}
+.title button{background:rgba(255,255,255,.18);color:#fff;border:0;padding:4px 10px;border-radius:4px;cursor:pointer;font:inherit}
+.fbar{display:flex;align-items:center;border-bottom:1px solid var(--line);background:var(--lb);font-family:ui-monospace,Consolas,monospace;font-size:13px}
+#nb{width:64px;text-align:center;padding:6px;border-right:1px solid var(--line);font-weight:700}
+.fx{padding:6px 10px;color:var(--g);font-style:italic;font-weight:700;border-right:1px solid var(--line)}
+#fv{padding:6px 12px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grid{flex:1;overflow:auto}
+table{border-collapse:separate;border-spacing:0;min-width:760px;width:100%;table-layout:fixed}
+th,td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 9px;vertical-align:top;overflow-wrap:anywhere}
+thead th{position:sticky;top:0;background:var(--hd);font-weight:600;font-size:12px;text-align:center;z-index:2;color:#6a717b;padding:3px}
+.rh{position:sticky;left:0;background:var(--hd);text-align:center;font-size:12px;color:#6a717b;width:38px;z-index:1;padding:6px 2px}
+thead th:first-child{left:0;z-index:3;width:38px}
+td{cursor:cell}
+td.sel{outline:2px solid var(--sel);outline-offset:-2px;background:var(--gl)}
+.t{background:var(--g);color:#fff;font-size:30px;font-weight:700;line-height:1.1;padding:16px 12px}
+.sb{background:var(--gl);font-size:16px;font-weight:600;color:var(--g)}
+.hd{background:var(--hd);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.05em}
+.lb{background:var(--lb);font-weight:600}
+.ok{background:#c6efce;color:#006100;font-weight:700;text-align:center}
+.big{font-size:30px;font-weight:700;color:var(--g);text-align:center}
+.cn{text-align:center}
+.w{white-space:normal;line-height:1.5}
+.a{background:#c6efce;color:#006100;font-weight:600}.p{background:var(--warn);font-weight:600}.i{background:var(--bad);font-weight:600}
+.bar{height:14px;background:linear-gradient(90deg,#63be7b,#2e9d58);border-radius:2px}
+a{color:var(--bl);font-weight:600}
+.cta{display:inline-block;background:var(--g);color:#fff;text-decoration:none;padding:6px 14px;border-radius:4px}
+.tabs{display:flex;background:var(--hd);border-top:1px solid var(--line);overflow-x:auto;padding:0 6px}
+.tabs button{border:0;background:none;color:var(--ink);padding:9px 16px;font:inherit;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent}
+.tabs button.on{background:var(--bg);font-weight:700;border-bottom-color:var(--c)}
+.stat{display:flex;justify-content:space-between;background:var(--g);color:#fff;font-size:12px;padding:3px 12px}
 </style>
 </head>
 <body>
-<div class="wrap">
-<nav><b>EP/</b><div><a href="#route">route</a><a href="#services">services</a><a href="#live">live demo</a><a href="#ship">contact</a><a href="#" id="th">◐ theme</a></div></nav>
-
-<header class="hero">
-<div>
-<span class="tag mono"><i></i>Available for opportunities</span>
-<h1>Edwin<br><span>Peñacuba</span> Jr.</h1>
-<p style="font-size:1.15rem;max-width:480px">I run warehouse and logistics operations, manage e-commerce orders, and keep the data accurate — so every item is where the record says it is.</p>
-<p><a class="btn pri" href="#ship">Ship me a message →</a> <a class="btn" href="https://edwinpenacubajr.github.io/Edwin-Penacuba-Resume.pdf">Resume</a></p>
+<div class="app">
+<div class="title"><span>📗 Edwin_Penacuba_Portfolio.xlsx <small>— Saved</small></span><button id="th">◐ Theme</button></div>
+<div class="fbar"><div id="nb">A1</div><div class="fx">fx</div><div id="fv"></div></div>
+<div class="grid" id="grid"></div>
+<div class="tabs" id="tabs"></div>
+<div class="stat"><span id="sm">Ready · click any cell</span><span>Bacolod City, PH</span></div>
 </div>
-<div class="label">
-<div class="stamp">HANDLE WITH SKILLS</div>
-<div class="r"><span>FROM</span><span>Bacolod City, PH</span></div>
-<h3>EDWIN PEÑACUBA JR.</h3>
-<div class="r"><span>CONTENTS</span><span>Warehouse · Logistics · Data</span></div>
-<div class="r"><span>LANGUAGES</span><span>TL / EN / HIL</span></div>
-<div class="r"><span>STATUS</span><span>● Ready to dispatch</span></div>
-<div class="bar"></div>
-</div>
-</header>
-</div>
-
-<div class="belt"><div class="track" id="trk"></div></div>
-
-<div class="wrap">
-<section id="route">
-<h2><small>Tracking # EP-2017-2026</small>Career route</h2>
-<ul class="track-list">
-<li class="now"><span class="st">IN TRANSIT · JULY 2026 – NOW</span><h3>Warehouse & Logistics Supervisor</h3><div class="mono" style="font-size:.78rem">Beyond I.TECH Ventures Corp. · Bacolod Warehouse</div>
-<ul><li style="all:unset;display:list-item">Supervise warehouse and logistics operations.</li><li style="all:unset;display:list-item">Manage inventory records, documentation and item checking.</li><li style="all:unset;display:list-item">Support receiving and delivery coordination; track discrepancies.</li></ul></li>
-<li><span class="st">DELIVERED · 2019 – 2026</span><h3>Senior Technology Sales Associate</h3><div class="mono" style="font-size:.78rem">Beyond I.TECH Ventures Corp. · Ayala Malls Capitol Central</div>
-<ul><li style="all:unset;display:list-item">Helped customers choose tech products and supported daily sales operations.</li></ul></li>
-<li><span class="st">DELIVERED · MAR – MAY 2017</span><h3>Customer Service Representative</h3><div class="mono" style="font-size:.78rem">MCCS BPO & Marketing Inc. · Mandaluyong City</div></li>
-</ul>
-</section>
-
-<section id="services">
-<h2><small>Inventory</small>What's in the warehouse</h2>
-<div class="grid">
-<div class="crate"><h3>📊 Data entry & Excel</h3><p>Spreadsheets, inventory lists, organized records.</p></div>
-<div class="crate"><h3>📦 Warehouse & inventory</h3><p>Stock monitoring, receiving, labeling, documentation.</p></div>
-<div class="crate"><h3>📁 Admin support</h3><p>Documents, reports and tracking sheets.</p></div>
-<div class="crate"><h3>💻 Tech support</h3><p>Product knowledge and troubleshooting.</p></div>
-<div class="crate"><h3>💬 Customer service</h3><p>Inquiries, follow-ups and issue handling.</p></div>
-<div class="crate"><h3>🛒 E-commerce</h3><p>Product info, order coordination, data upkeep.</p></div>
-</div>
-</section>
-
-<section id="live">
-<h2><small>Live demo</small>Try my inventory tracker</h2>
-<p>This is the kind of sheet I build. Press <b>OUT</b> to ship an item, <b>IN</b> to receive stock — status flips to Reorder at the threshold.</p>
-<div class="card"><div class="scroll"><table>
-<thead><tr><th>Code</th><th>Item</th><th>In</th><th>Out</th><th>On hand</th><th>Min</th><th>Status</th><th></th></tr></thead>
-<tbody id="inv"></tbody></table></div>
-<p class="mono" style="font-size:.75rem;margin:12px 0 0">Formula: <code>=IF(E2&lt;=F2,"Reorder","OK")</code> · sample data only</p></div>
-</section>
-
-<section>
-<div class="two">
-<div class="card"><h2 style="font-size:1.5rem"><small>Origin</small>Education</h2><b>Associate in Computer Technology</b><br>Bacolod City College, 2018–2019<p>250-hr internship, Price Monitoring Unit, Office of the City Mayor — data encoding, accuracy checks, reports.</p></div>
-<div class="card"><h2 style="font-size:1.5rem"><small>Strengths</small>Core</h2>Leadership · Problem solving · Dependability · Time management · Communication · Adaptability</div>
-</div>
-</section>
-
-<section id="ship">
-<h2><small>Ship to</small>Let's work together</h2>
-<div class="card ship">Open to virtual assistance, admin support, data entry, logistics, warehouse, customer service and tech support roles.<br><br>
-✉️ <a href="mailto:edwinpenacubajr@gmail.com">edwinpenacubajr@gmail.com</a><br>📞 <a href="tel:+639168552232">+63 916 855 2232</a></div>
-</section>
-</div>
-<footer>© 2026 Edwin Peñacuba Jr. · Bacolod City, Philippines</footer>
-
 <script>
-var sk=["Warehouse & Inventory","Excel & Data Entry","WMS","Delivery Coordination","E-commerce Orders","Social Media","Canva","Web Basics","Leadership","Customer Service"];
-var t=document.getElementById("trk");
-t.innerHTML=sk.concat(sk).map(function(s){return '<div class="box"><span>'+s+'</span></div>'}).join("");
-var items=[["A-101","Laptop charger 65W",40,22,10],["A-102","Wireless mouse",60,51,10],["A-103","USB flash drive 64GB",30,12,8],["A-104","HDMI cable 2m",25,20,8]];
-function draw(){document.getElementById("inv").innerHTML=items.map(function(r,i){var h=r[2]-r[3],low=h<=r[4];
-return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td><td><b>'+h+'</b></td><td>'+r[4]+'</td><td><span class="pill '+(low?'RE':'OK')+'">'+(low?'Reorder':'OK')+'</span></td><td><button data-o="'+i+'" '+(h<1?'disabled':'')+'>OUT</button> <button data-i="'+i+'">IN +5</button></td></tr>'}).join("")}
-document.getElementById("inv").addEventListener("click",function(e){var b=e.target;if(b.dataset.o!==undefined)items[b.dataset.o][3]++;else if(b.dataset.i!==undefined)items[b.dataset.i][2]+=5;else return;draw()});
-draw();
-document.getElementById("th").addEventListener("click",function(e){e.preventDefault();var r=document.documentElement,d=getComputedStyle(r).getPropertyValue("--bg").trim()==="#17150f";r.setAttribute("data-theme",d?"light":"dark")});
+function E(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;")}
+function C(t,o){o=o||{};return{t:t,c:o.c||"",s:o.s||1,f:o.f||"",h:o.h||0}}
+function L(t,h,f){return C(h,{h:1,f:f||t})}
+function R(a){return a}
+var B=C("");
+function kv(k,v,o){return [C(k,{c:"lb"}),C(v,{s:5,c:o||"w"})]}
+function lk(txt,url){return C('<a href="'+url+'" target="_blank" rel="noopener">'+txt+'</a>',{h:1,f:url})}
+var S=[
+["Hello","#217346",[
+[C("Edwin Peñacuba Jr.",{c:"t",s:6})],
+[C("Operations & Virtual Assistant — detail-oriented support for your business",{c:"sb",s:6})],
+[B],
+[C("FIELD",{c:"hd"}),C("VALUE",{c:"hd",s:5})],
+kv("Location","Bacolod City, Negros Occidental, Philippines"),
+kv("Current role","Warehouse & Logistics Supervisor"),
+kv("Targeting","Virtual Assistant: admin, data entry, customer support, e-commerce and inventory"),
+kv("Languages","English • Tagalog • Hiligaynon"),
+kv("Availability","Mon–Fri · Philippine Time · replies within 24 hours"),
+[C("Open to work",{c:"lb"}),C("TRUE",{c:"ok",f:'=AVAILABLE("Edwin")'}),C("← open for VA opportunities",{s:4})],
+[B],
+[C("ROLES",{c:"hd cn"}),C("YEARS",{c:"hd cn"}),C("LANGUAGES",{c:"hd cn"}),C("PROJECTS",{c:"hd cn"}),B,B],
+[C("3",{c:"big",f:"=COUNTA(Experience!A3:A5)"}),C("7+",{c:"big",f:'=DATEDIF("2019-05-01",TODAY(),"Y")'}),C("3",{c:"big",f:"=COUNTA(Skills!A14:A16)"}),C("5",{c:"big",f:"=COUNTA(Projects!B3:B7)"}),B,B],
+[B],
+[C("Hi! I'm a Warehouse & Logistics Supervisor moving into virtual assistance, with experience in warehouse operations, technology sales, customer service, documentation, data entry and admin support. I keep records accurate and day-to-day tasks on track.",{s:6,c:"w"})],
+[B],
+[C('<a class="cta" href="https://calendly.com/edwinpenacubajr" target="_blank" rel="noopener">📅 Book a call</a>',{h:1,s:2,f:"https://calendly.com/edwinpenacubajr"}),C('<a class="cta" href="https://edwinpenacubajr.github.io/Edwin-Penacuba-Resume.pdf" target="_blank" rel="noopener">⬇ Resume</a>',{h:1,s:2,f:"https://edwinpenacubajr.github.io/Edwin-Penacuba-Resume.pdf"}),B,B]
+]],
+["Experience","#2b59ff",[
+[C("Experience",{c:"t",s:5})],
+[C("ROLE",{c:"hd"}),C("COMPANY",{c:"hd"}),C("PERIOD",{c:"hd"}),C("STATUS",{c:"hd"}),C("HIGHLIGHTS",{c:"hd"})],
+[C("Warehouse & Logistics Supervisor",{c:"lb"}),C("Beyond ITECH Ventures Corp. — Bacolod Warehouse"),C("Jul 2026 – Present"),C("CURRENT",{c:"ok"}),C("Lead warehouse staff and daily operations. Manage inventory records, documentation and item checks. Support receiving and delivery coordination. Monitor discrepancies and keep records accurate.",{c:"w"})],
+[C("Senior Technology Sales Associate",{c:"lb"}),C("Beyond ITECH Ventures Corp. — Ayala Malls Capitol Central"),C("May 2019 – Jul 2026"),C("COMPLETED",{c:"p"}),C("Helped customers choose technology products. Gave product information and support. Supported sales operations and daily store activities.",{c:"w"})],
+[C("Customer Service Representative",{c:"lb"}),C("MICCS BPO & Marketing Inc. — Mandaluyong City"),C("Mar – May 2017"),C("COMPLETED",{c:"p"}),C("Handled customer concerns and inquiries through professional communication.",{c:"w"})],
+[B],
+[C("EDUCATION & TRAINING",{c:"hd",s:5})],
+[C("Associate in Computer Technology",{c:"lb"}),C("Bacolod City College"),C("2018–2019"),B,B],
+[C("Price Monitoring Unit (CMO-PMU)",{c:"lb"}),C("Office of the City Mayor, Bacolod"),C("2019 · 250 hrs"),B,C("Encoded and maintained price and sectoral data, checked accuracy, helped prepare reports and kept files organized for on-time submission.",{c:"w"})],
+[C("English Proficiency & Advance Call Center Training",{c:"lb"}),C("IAAP, Intramuros, Manila"),C("Feb 2017 · 112 hrs"),B,C("English communication and customer service training.",{c:"w"})]
+]],
+["Skills","#e8541e",[
+[C("Skills",{c:"t",s:4})],
+[C("SKILL",{c:"hd"}),C("LEVEL",{c:"hd"}),C("PROFICIENCY",{c:"hd",s:2})],
+sk("📦 Warehouse & Inventory","Advanced",90,"a"),
+sk("🗂️ Documentation","Advanced",90,"a"),
+sk("📊 Data Entry & Excel","Proficient",75,"p"),
+sk("💬 Customer Service","Proficient",75,"p"),
+sk("💻 Technology Sales","Proficient",75,"p"),
+sk("🌐 Web & Digital Tools","Intermediate",55,"i"),
+[B],
+[C("TOOLS",{c:"hd",s:4})],
+[C("AI & Web",{c:"lb"}),C("Claude · ChatGPT · GitHub · Streamlit · AI-assisted web building",{s:3,c:"w"})],
+[C("Productivity",{c:"lb"}),C("Excel / Google Sheets · Trello · Gmail · Canva · CapCut · Calendly · Zoom · Teams",{s:3,c:"w"})],
+[C("Business systems",{c:"lb"}),C("WMS · CRM systems · E-commerce platforms",{s:3,c:"w"})],
+[C("English",{c:"lb"}),C("Fluent working use",{s:3})],
+[C("Tagalog",{c:"lb"}),C("Fluent working use",{s:3})],
+[C("Hiligaynon",{c:"lb"}),C("Fluent working use",{s:3})]
+]],
+["Services","#8a3ffc",[
+[C("Services",{c:"t",s:3})],
+[C("SERVICE",{c:"hd"}),C("WHAT I DO",{c:"hd",s:2})],
+sv("📊 Data entry & Excel","Accurate entry, spreadsheets, inventory lists, sorting and checked records."),
+sv("📦 Warehouse & inventory","Stock monitoring, item checks, receiving support, labeling, documentation."),
+sv("📁 Administrative support","Documents, record keeping, reports, tracking sheets, file organization."),
+sv("💻 Technology support","Product knowledge, customer assistance, troubleshooting support."),
+sv("💬 Customer service","Clear communication, inquiries, follow-ups and issue handling."),
+sv("🔎 Research & online tasks","Web and product research, comparisons, short summaries."),
+sv("🛒 E-commerce support","Product info management, order coordination, data organization."),
+sv("✉️ Email & communication","Professional messages, status updates, follow-ups with customers and suppliers."),
+sv("🗂️ Records & documentation","Records that are structured, current and easy to retrieve.")
+]],
+["Projects","#0a8a8a",[
+[C("Projects",{c:"t",s:5})],
+[C("#",{c:"hd cn"}),C("PROJECT",{c:"hd"}),C("CATEGORY",{c:"hd"}),C("STACK",{c:"hd"}),C("LINK",{c:"hd"})],
+[C("1",{c:"cn"}),C("Inventory Tracking System",{c:"lb"}),C("Inventory"),C("Excel / WMS reports"),lk("See my process ↗","https://edwinpenacubajr.github.io/inventory-process.html")],
+[C("2",{c:"cn"}),C("Warehouse Operations Tracker",{c:"lb"}),C("Logistics"),C("Sheets / Streamlit"),C('<a href="https://bacolod-warehouse-monitoring-it2drdk7mjh3maaboxe3zf.streamlit.app/" target="_blank" rel="noopener">Live sample ↗</a><br><a href="https://docs.google.com/spreadsheets/d/1epIWQ5NT4NFiLwPAIIWgnkEQDD4X-CtYkVmr3JDK0B0/edit?gid=0#gid=0" target="_blank" rel="noopener">Delivery sheet ↗</a>',{h:1,f:"Live sample + Delivery sheet"})],
+[C("3",{c:"cn"}),C("Product & Logistics Research",{c:"lb"}),C("Research"),C("Web / Excel / Streamlit"),lk("Shopify Listing Studio ↗","https://shopify-listing-studio-cqlmdmdkjgabddngxwebzd.streamlit.app/#bring-in-your-products")],
+[C("4",{c:"cn"}),C("Customer Support Workflow",{c:"lb"}),C("Customer service"),C("CRM concepts"),lk("View sample ↗","https://edwinpenacubajr.github.io/customer-support-workflow.html")],
+[C("5",{c:"cn"}),C("Personal Portfolio Website",{c:"lb"}),C("Web"),C("HTML / CSS / JS"),lk("Live site ↗","https://edwinpenacubajr.github.io/")]
+]],
+["Contact","#d62828",[
+[C("Contact",{c:"t",s:3})],
+[C("CHANNEL",{c:"hd"}),C("DETAILS",{c:"hd",s:2})],
+[C("✉️ Email",{c:"lb"}),C('<a href="mailto:edwinpenacubajr@gmail.com">edwinpenacubajr@gmail.com</a>',{h:1,s:2,f:"mailto:edwinpenacubajr@gmail.com"})],
+[C("📞 Phone",{c:"lb"}),C('<a href="tel:+639168552232">+63 916 855 2232</a>',{h:1,s:2,f:"tel:+639168552232"})],
+[C("📅 Calendly",{c:"lb"}),C('<a href="https://calendly.com/edwinpenacubajr" target="_blank" rel="noopener">Book a call ↗</a>',{h:1,s:2,f:"https://calendly.com/edwinpenacubajr"})],
+[C("LinkedIn",{c:"lb"}),C('<a href="https://www.linkedin.com/in/edwin-pe%C3%B1acuba-jr-8b45523b7/" target="_blank" rel="noopener">edwin-peñacuba-jr ↗</a>',{h:1,s:2,f:"linkedin.com/in/edwin-peñacuba-jr"})],
+[C("OnlineJobs.ph",{c:"lb"}),C('<a href="https://v2.onlinejobs.ph/jobseekers/info/3358269" target="_blank" rel="noopener">Profile ↗</a>',{h:1,s:2,f:"onlinejobs.ph profile"})],
+[C("Upwork",{c:"lb"}),C('<a href="https://www.upwork.com/freelancers/~01068b085559722145" target="_blank" rel="noopener">Profile ↗</a>',{h:1,s:2,f:"upwork profile"})],
+[C("Hours",{c:"lb"}),C("Mon–Fri · Philippine Time (PHT) · replies within 24 hours",{s:2,c:"w"})],
+[C("Status",{c:"lb"}),C("TRUE",{c:"ok",f:'=AVAILABLE("Edwin")'}),C("Open for opportunities")]
+]]
+];
+function sk(n,l,v,c){return [C(n,{c:"lb"}),C(l,{c:c}),C('<div class="bar" style="width:'+v+'%"></div>',{h:1,s:2,f:v+"%"})]}
+function sv(n,d){return [C(n,{c:"lb"}),C(d,{s:2,c:"w"})]}
+var grid=document.getElementById("grid"),tabs=document.getElementById("tabs"),nb=document.getElementById("nb"),fv=document.getElementById("fv"),sm=document.getElementById("sm");
+function show(i){
+var s=S[i],w=s[2],h='<table><thead><tr><th></th>';
+for(var k=0;k<6;k++)h+='<th>'+String.fromCharCode(65+k)+'</th>';
+h+='</tr></thead><tbody>';
+w.forEach(function(r,n){h+='<tr><td class="rh">'+(n+1)+'</td>';r.forEach(function(c){h+='<td class="'+c.c+'" colspan="'+c.s+'" data-f="'+E(c.f||(c.h?"":c.t))+'">'+(c.h?c.t:E(c.t))+'</td>'});h+='</tr>'});
+grid.innerHTML=h+'</tbody></table>';grid.scrollTop=0;
+Array.prototype.forEach.call(tabs.children,function(b,j){b.classList.toggle("on",j===i)});
+sm.textContent="Sheet "+(i+1)+" of "+S.length+" · "+s[0];
+pick(grid.querySelector("tbody td:not(.rh)"));
+}
+function pick(td){if(!td)return;var o=grid.querySelector(".sel");if(o)o.classList.remove("sel");td.classList.add("sel");
+var col=0,p=td.previousElementSibling;while(p){if(!p.classList.contains("rh"))col+=p.colSpan;p=p.previousElementSibling}
+nb.textContent=String.fromCharCode(65+col)+td.parentNode.rowIndex;fv.textContent=td.getAttribute("data-f")||""}
+grid.addEventListener("click",function(e){var td=e.target.closest("td");if(td&&!td.classList.contains("rh"))pick(td)});
+S.forEach(function(s,i){var b=document.createElement("button");b.textContent=s[0];b.style.setProperty("--c",s[1]);b.onclick=function(){show(i)};tabs.appendChild(b)});
+document.getElementById("th").onclick=function(){var r=document.documentElement,d=getComputedStyle(r).getPropertyValue("--bg").trim()==="#1b1d20";r.setAttribute("data-theme",d?"light":"dark")};
+show(0);
 </script>
 </body>
 </html>
